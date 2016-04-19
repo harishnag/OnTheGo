@@ -2,10 +2,14 @@ machine:
   services:
     - docker
 
+dependencies:
+
+  pre:
+    - docker version
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
 
 deployment:
   hub:
     branch: master
     commands:
-      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push harishnag/onthego
