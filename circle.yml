@@ -7,5 +7,5 @@ deployment:
   hub:
     branch: master
     commands:
-      - docker login -e h.nagarajmail@gmail.com -u harishnag -p Ranj1982!
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push harishnag/onthego
